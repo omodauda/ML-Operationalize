@@ -47,4 +47,30 @@ source .devops/bin/activate
 * Setup and Configure Docker locally
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
-* Run via kubectl
+* Run via kubectl `kubectl run machine-learning-api --image=$dockerpath`
+
+## File directories
+
+.circleci/config.yml - circleci configuration
+
+model_data -  housing prices in Boston area
+
+output_files/docker_out.txt - docker log outputs
+
+output_files/kubernetes_out.txt - kubernetes log outputs
+
+app.py - flask app API endpoint with routes to get house prices in Boston
+
+Dockerfile - Docker configuration file
+
+make_prediction.sh - script to log predictions endpoint output
+
+Makefile - The Makefile includes instructions on environment setup and lint tests
+
+requirements.txt - python dependencies for this project
+
+run_docker.sh - shell script to build docker image and run it
+
+run_kubernetes.sh - shell script to run the Docker Hub container with kubernetes
+
+upload_docker.sh - shell script to upload local docker build image to docker hub (online repository)
